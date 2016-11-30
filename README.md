@@ -53,3 +53,36 @@ Update map
  %{map | :a => 2}
 ```
 Both access and update syntaxes above require the given keys to exist
+
+### Modules
+- Create our own modules in Elixir, we use the ``` defmodule macro ```
+- We use the ``` def ``` macro to define functions in that module
+
+```elixir
+defmodule StringInfo do
+  def size_details(str) do
+    IO.puts byte_size(str)
+    IO.puts String.length(str)
+  end
+end
+$> iex string_info.ex
+iex> StringInfo("Elixir")
+```
+
+##### Named functions
+Inside a module, we can define private functions with defp. A function defined with defp can be invoked from other modules while a private function can only be invoked locally.
+
+### Function Capturing
+This can actually be used to retrieve a named function as a function type.
+- Capture functions using operator &.  &name/arity(arguments)
+- capture syntax can also be used as a shortcut for creating functions.
+
+```elixir
+fun = &StringInfo.size_details/1
+fun.('Elixir')
+```
+
+```elixir
+fun = &(&1 + 1)
+fun.(1) //2
+```
