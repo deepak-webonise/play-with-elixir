@@ -103,3 +103,22 @@ def generate(length, n \\ 0) do
   generate(length, n, n + 1)
 end
 ```
+
+### Enumerables
+Elixir provides the concept of enumerables and the Enum module to work with them.
+- The Enum module provides a huge range of functions to transform, sort, group, filter and retrieve items from enumerables.
+- We say the functions in the Enum module are polymorphic because they can work with diverse data types.
+- When performing multiple operations with Enum, each operation is going to generate an intermediate list until we reach the result
+
+```elixir
+  Enum.reduce([1, 2, 3], 0, fn(x, acc) -> x + acc end)  //6
+  Enum.map([1, 2, 3], fn(x) -> x * 2 end) // [2, 4, 6]
+```
+
+### Pipe operator
+It takes the output from the expression on its left side and passes it as the first argument to the function call on its right side. It’s similar to the Unix | operator.
+- Its purpose is to highlight the data being transformed by a series of functions.
+
+```elixir
+1..10 |> Enum.map(&(&1 + 1))
+```
