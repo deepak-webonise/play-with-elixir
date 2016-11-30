@@ -86,3 +86,20 @@ fun.('Elixir')
 fun = &(&1 + 1)
 fun.(1) //2
 ```
+
+### Recursion
+Example : Fibonacci Series
+```elixir
+def generate(length, previous, next) when length <= 1 do
+  IO.puts next
+end
+
+def generate(length, previous, next) when length > 1 do
+  IO.puts next
+  generate(length - 1, next, previous + next)
+end
+# \\ default parameter
+def generate(length, n \\ 0) do
+  generate(length, n, n + 1)
+end
+```
