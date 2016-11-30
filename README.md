@@ -1,7 +1,8 @@
-# Play with elixir
+[![Play with Elixir](http://elixir-lang.org/images/logo/logo.png)](http://elixir-lang.org/)
+
 Elixir is functional programming language which run on Erlang VM.
-- Syntax is same as Ruby
-- Actor model cuncurrenry
+- Syntax is inspired by Ruby
+- Actor model
 
 ### Data Types
 - Integer
